@@ -1,0 +1,43 @@
+.form-container {
+  padding: 25px;
+  width: auto;
+}
+
+.sign-up-form {
+  min-width: 150px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-card-header {
+  text-align: center;
+}
+
+.mat-card-header-text {
+  width: 100%;
+}
+
+mat-card-header{
+  justify-content: center;
+}
+
+.mat-form-field {
+  padding: 5px 0;
+}
+
+.gif {
+  display: block;
+  padding: 20px;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  position: relative;
+  background: url(https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
