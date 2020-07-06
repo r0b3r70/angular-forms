@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../shared/user';
 import { Observable } from 'rxjs';
+
+import { User } from '../shared/user';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,6 @@ export class FormService {
 
   addUser(data: User): Observable<User> {
     return this.http.post<User>(this.url, data);
-        //.pipe(catchError(this.handleError('addUser', data)));
   }
 
 }

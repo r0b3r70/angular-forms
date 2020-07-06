@@ -2,7 +2,7 @@ import { ValidatorFn, FormControl, ValidationErrors } from '@angular/forms';
 
 export const passwordValidator: ValidatorFn = (control: FormControl): ValidationErrors | null => {
 
-  const group = control.parent
+  const group = control.parent;
 
   // Don't try to validate when group has not been initialized yet
   if(!group) {
