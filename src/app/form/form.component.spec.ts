@@ -124,11 +124,11 @@ describe('FormComponent', () => {
     expect(errors['invalidPassword']).toBeFalsy();
   });
 
-  it('Password does not match first name', () => {
+  it('Password does not match last name', () => {
     let errors = {};
-    const firstName = gc('firstName');
+    const lastName = gc('lastName');
     const password = gc('password');
-    firstName.setValue('foo');
+    lastName.setValue('foo');
     password.setValue('RobErt01');
     errors = password.errors || {};
     expect(errors['invalidPassword']).toBeFalsy();

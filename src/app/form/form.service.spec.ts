@@ -16,4 +16,11 @@ describe('FormService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('Add User', () => {
+    const data = {'firstName':'Hello','lastName':'World','email':'hello@world.com','password':'StrongPAss'};
+    service.addUser(data)
+      .subscribe(res => expect(res).toBeTruthy())
+  });
+
 });

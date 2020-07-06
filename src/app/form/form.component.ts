@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { passwordValidator } from '../shared/validators/passwordValidator';
 import { User } from '../shared/user';
@@ -9,14 +9,14 @@ import { FormService } from './form.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
 
-  constructor(private fb: FormBuilder, private formService: FormService) { }
-
-  ngOnInit(): void {}
   error;
+  showPassword = false;
   submitted = false;
   regex = '^(?=.*?[A-Z])(?=.*?[a-z]).+$';
+
+  constructor(private fb: FormBuilder, private formService: FormService) { }
 
   /* Using form builder to setup the form */
   signUpForm = this.fb.group({
