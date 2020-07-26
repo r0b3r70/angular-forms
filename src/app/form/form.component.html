@@ -14,29 +14,24 @@
         <mat-form-field class="full-width">
           <mat-label>First Name</mat-label>
           <input matInput formControlName="firstName" placeholder="First Name" required>
-          <mat-error *ngIf="firstName.errors">
-            First Name is <strong>required</strong>
+          <mat-error *ngIf="formErrorMessages.firstName">
+            {{formErrorMessages.firstName}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width">
           <mat-label>Last Name</mat-label>
           <input matInput formControlName="lastName" placeholder="Last Name" required>
-          <mat-error *ngIf="lastName.errors">
-            Last Name is <strong>required</strong>
+          <mat-error *ngIf="formErrorMessages.lastName">
+            {{formErrorMessages.lastName}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" placeholder="user@domain.com" required>
-
-          <mat-error *ngIf="email.errors?.email">
-            Please enter a valid email address
-          </mat-error>
-
-          <mat-error *ngIf="email.errors?.required">
-            Email address is required
+          <mat-error *ngIf="formErrorMessages.email">
+            {{formErrorMessages.email}}
           </mat-error>
         </mat-form-field>
 
@@ -47,20 +42,8 @@
             <mat-icon>{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
 
-          <mat-error *ngIf="password.errors?.required">
-            Password is required
-          </mat-error>
-
-          <mat-error *ngIf="password.errors?.pattern">
-            Use lowercase and UPPERCASE letters.
-          </mat-error>
-
-          <mat-error *ngIf="password.errors?.minlength">
-            Use at least 8 characters. That's just {{password.errors?.minlength?.requiredLength - password.errors?.minlength?.actualLength}} more.
-          </mat-error>
-
-          <mat-error *ngIf="password.errors?.invalidPassword">
-            Don't use your name in your password, please.
+          <mat-error *ngIf="formErrorMessages.password">
+            {{formErrorMessages.password}}
           </mat-error>
 
         </mat-form-field>
@@ -70,8 +53,8 @@
       <mat-card-actions>
         <button type="submit" mat-raised-button color="primary" [disabled]="signUpForm.invalid || this.submitted">Sign Up</button>
       </mat-card-actions>
-      <mat-error *ngIf="error">
-        {{error}}
+      <mat-error *ngIf="submitError">
+        {{submitError}}
       </mat-error>
 
     </mat-card>
